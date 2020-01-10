@@ -13,7 +13,8 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.rules.ExpectedException;
 
 import se.avelon.edge.omx.datafeed.CandleFeedData;
@@ -56,42 +57,39 @@ public class FormulasTestcase extends TestCase {
 	public void tearDown() throws Exception {
 	}
 
-	@Test (expected = ArrayIndexOutOfBoundsException.class)
 	public void testMean() {
 		assertEquals(2.18, Formulas.mean(data,  5), 0.01);
-		// Exception ArrayIndexOutOfBoundsException
-		Formulas.mean(data, 10);
+		
+		Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
+			Formulas.mean(data, 10);
+		});
 	}
 	
-	@Test (expected = ArrayIndexOutOfBoundsException.class)
 	public void testDonchianHigh() {
 		assertEquals(2.9, Formulas.donchianHigh(data,  5), 0.01);
-		// Exception ArrayIndexOutOfBoundsException
-		Formulas.donchianHigh(data, 10);
-	}
 
-	@Test (expected = ArrayIndexOutOfBoundsException.class)
+		Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
+			Formulas.donchianHigh(data, 10);
+		});
+	}		
+
 	public void testDonchianLow() {
 		assertEquals(0.8, Formulas.donchianLow(data,  5), 0.01);
-		// Exception ArrayIndexOutOfBoundsException
-		Formulas.donchianLow(data, 10);
+
+		Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
+			Formulas.donchianLow(data, 10);
+		});
 	}
 
-	@Test (expected = ArrayIndexOutOfBoundsException.class)
 	public void testFibonacci() {
-		Formulas.fibonacci(data, 10);
+		Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
+			Formulas.fibonacci(data, 10);
+		});
 	}
 
-	@Test (expected = ArrayIndexOutOfBoundsException.class)
 	public void testRichochelette() {
-		try {
-			Assert.assertFalse(Formulas.richochette(data,  5));
-			// Exception ArrayIndexOutOfBoundsException
-			Formulas.richochette(data, 10);
-		} 
-		catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Assertions.assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
+			Formulas.richochette(data,  5);
+		});
 	}
 }
