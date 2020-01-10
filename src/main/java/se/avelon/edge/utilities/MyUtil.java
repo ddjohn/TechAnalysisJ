@@ -11,8 +11,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import se.avelon.edge.omx.datafeed.OmxCandleFeedAdapter;
-
 public class MyUtil {
 	private static final DajoLogger log = DajoLogger.getLogger(MyUtil.class);
 	static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

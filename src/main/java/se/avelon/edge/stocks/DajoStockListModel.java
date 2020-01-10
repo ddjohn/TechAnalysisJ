@@ -5,7 +5,7 @@ import javax.swing.AbstractListModel;
 
 import se.avelon.edge.utilities.DajoLogger;
 
-public class DajoStockListModel extends AbstractListModel {
+public class DajoStockListModel extends AbstractListModel<Object> {
 
 	private static final long serialVersionUID = 1L;
 	private final static DajoLogger log = DajoLogger.getLogger(DajoStockListModel.class);

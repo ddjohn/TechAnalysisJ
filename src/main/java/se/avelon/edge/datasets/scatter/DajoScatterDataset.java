@@ -3,7 +3,6 @@ package se.avelon.edge.datasets.scatter;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Paint;
-import java.awt.Point;
 import java.awt.Shape;
 import java.text.ParseException;
 import java.util.Vector;
@@ -13,8 +12,6 @@ import org.jfree.data.DomainOrder;
 import org.jfree.data.general.DatasetChangeListener;
 import org.jfree.data.general.DatasetGroup;
 import org.jfree.data.xy.XYDataset;
-import org.jfree.util.ShapeUtilities;
-
 import se.avelon.edge.formulas.Formulas;
 import se.avelon.edge.omx.datafeed.CandleFeedData;
 import se.avelon.edge.shapes.DajoScatterShape;

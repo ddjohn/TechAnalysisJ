@@ -74,7 +74,7 @@ public class DajoStatusBar extends JPanel implements ItemListener, ListSelection
 
 	public void valueChanged(ListSelectionEvent e) {
 		if(e.getValueIsAdjusting() == false) {
-			JList list = (JList)e.getSource();
+			JList<?> list = (JList<?>)e.getSource();
 			Object selectionValues[] = list.getSelectedValues();
 			for(Object selectionValue : selectionValues) {
 				if(selectionValue instanceof StockData) {
@@ -86,7 +86,7 @@ public class DajoStatusBar extends JPanel implements ItemListener, ListSelection
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		JComboBox box = (JComboBox)e.getSource();
+		JComboBox<?> box = (JComboBox<?>)e.getSource();
 		Object selectionValues[] = box.getSelectedObjects();
 		for(Object selectionValue : selectionValues) {
 			if(selectionValue instanceof MyTimeData) {

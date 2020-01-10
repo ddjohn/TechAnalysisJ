@@ -1,6 +1,5 @@
 package se.avelon.edge.omx.datafeed;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Vector;
 import javax.xml.transform.TransformerException;

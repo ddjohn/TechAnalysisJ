@@ -235,7 +235,7 @@ public class DajoTechnicalAnalysis extends DajoChartPanel implements ItemListene
 		log.info("New stock? " + e);
 
 		if(e.getValueIsAdjusting() == false) {
-			JList list = (JList)e.getSource();
+			JList<?> list = (JList<?>)e.getSource();
 			Object selectionValues[] = list.getSelectedValues();
 			for(Object selectionValue : selectionValues) {
 				if(selectionValue instanceof StockData) {
@@ -292,7 +292,7 @@ public class DajoTechnicalAnalysis extends DajoChartPanel implements ItemListene
 	public void actionPerformed(ActionEvent e) {
 		log.info("New time? " + e);
 
-		JComboBox box = (JComboBox)e.getSource();
+		JComboBox<?> box = (JComboBox<?>)e.getSource();
 		Object selectionValues[] = box.getSelectedObjects();
 		for(Object selectionValue : selectionValues) {
 			if(selectionValue instanceof MyTimeData) {

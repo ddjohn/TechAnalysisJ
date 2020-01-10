@@ -3,7 +3,7 @@ package se.avelon.edge.application;
 import java.awt.event.ActionListener;
 import javax.swing.JComboBox;
 
-public class MyMaxNuberOfRows extends JComboBox implements ActionListener {
+public class MyMaxNuberOfRows extends JComboBox<Object> implements ActionListener {
 	private static final long serialVersionUID = 1L;
 
 	public MyMaxNuberOfRows() {

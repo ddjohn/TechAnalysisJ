@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.Calendar;
 import javax.swing.JComboBox;
 
-public class MyTimeBox extends JComboBox {
+public class MyTimeBox extends JComboBox<Object> {
 	private static final long serialVersionUID = 1L;
 
 	public MyTimeBox() {

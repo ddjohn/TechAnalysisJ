@@ -26,7 +26,7 @@ public class EventManager implements ItemListener, ActionListener, ListSelection
 	
 	private static EventManager instance = null;
 	private final Vector<JCheckBox> items = new Vector<JCheckBox>();
-	private final Vector<JList> lists = new Vector<JList>();
+	private final Vector<JList<?>> lists = new Vector<JList<?>>();
 	private final Vector<JComponent> actions = new Vector<JComponent>();
 	private final Vector<JTabbedPane> panes = new Vector<JTabbedPane>();
 	boolean debug = false;
@@ -79,7 +79,7 @@ public class EventManager implements ItemListener, ActionListener, ListSelection
 		}
 	}
 
-	public void registerListSelection(JList item, String name) {
+	public void registerListSelection(JList<?> item, String name) {
 		item.setName(name);
 		if(item.getName() != null) {		
 			log.fine("Register: " + item.getName());
@@ -93,7 +93,7 @@ public class EventManager implements ItemListener, ActionListener, ListSelection
 
 	public void subscribeOnList(String name, ListSelectionListener listener) {
 		boolean found = false;
-		for(JList item : lists) {
+		for(JList<?> item : lists) {
 			if(item.getName().compareTo(name) == 0) {
 				item.addListSelectionListener(listener);
 				found = true;
@@ -118,7 +118,7 @@ public class EventManager implements ItemListener, ActionListener, ListSelection
 		}		
 		if(debug) {
 			if(item instanceof JComboBox) {
-				((JComboBox)item).addActionListener(this);
+				((JComboBox<?>)item).addActionListener(this);
 			}
 			else if(item instanceof JButton)  {
 				((AbstractButton)item).addActionListener(this);
@@ -147,7 +147,7 @@ public class EventManager implements ItemListener, ActionListener, ListSelection
 		for(JComponent item : actions) {
 			if(item instanceof JComboBox) {
 				if(item.getName().compareTo(name) == 0) {
-					((JComboBox)item).addActionListener(listener);
+					((JComboBox<?>)item).addActionListener(listener);
 					found = true;
 				}	
 			}

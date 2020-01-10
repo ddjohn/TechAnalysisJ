@@ -8,11 +8,9 @@ import javax.xml.xpath.XPathExpressionException;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
-import se.avelon.edge.application.DajoToolbar;
 import se.avelon.edge.eventhandling.EventManager;
 import se.avelon.edge.guifactories.DajoToolbarFactory;
 import se.avelon.edge.omx.datafeed.OmxData;
-import se.avelon.edge.stocks.DajoStockListModel;
 import se.avelon.edge.utilities.DajoLogger;
 import se.avelon.edge.utilities.MyXmlUtil;
 
@@ -30,7 +28,7 @@ public class MyLosersChart extends MyCommonOmxTable implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent ae) {
-		JComboBox box = (JComboBox)ae.getSource();
+		JComboBox<?> box = (JComboBox<?>)ae.getSource();
 		Object selectionValues[] = box.getSelectedObjects();
 		for(Object selectionValue : selectionValues) {
 			rows = (Integer) selectionValue;

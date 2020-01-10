@@ -39,7 +39,7 @@ public class DajoMyStocks extends DajoChartPanel implements ListSelectionListene
 		log.info("New stock? " + e);
 
 		if(e.getValueIsAdjusting() == false) {
-			JList list = (JList)e.getSource();
+			JList<?> list = (JList<?>)e.getSource();
 			Object selectionValues[] = list.getSelectedValues();
 			for(Object selectionValue : selectionValues) {
 				if(selectionValue instanceof StockData) {
