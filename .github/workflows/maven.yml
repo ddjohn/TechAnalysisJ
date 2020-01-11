@@ -23,4 +23,5 @@ jobs:
         path: target/techanalysis-0.0.1-SNAPSHOT.jar
     - name: Run Testcases
       run: mvn -B test --file pom.xml -Dtest=se.avelon.edge.formulas.FormulasTestcase
+      run: mvn -B test --file pom.xml -Dtest=se.avelon.edge.analysis.CandlestickTestcase
 

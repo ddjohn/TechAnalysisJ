@@ -1,22 +1,17 @@
 package se.avelon.edge.formulas;
 
-import static org.junit.Assert.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Vector;
 
-import junit.framework.Assert;
-import junit.framework.TestCase;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.junit.rules.ExpectedException;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 
+import junit.framework.TestCase;
 import se.avelon.edge.omx.datafeed.CandleFeedData;
 
 @SuppressWarnings("deprecation")
@@ -38,22 +33,22 @@ public class FormulasTestcase extends TestCase {
 			e.printStackTrace();
 		}
 	}
-	public ExpectedException exception = ExpectedException.none();
+	//public ExpectedException exception = ExpectedException.none();
 
 
-	@BeforeClass
+	@BeforeAll
 	public static void setUpBeforeClass() throws Exception {
 	}
 
-	@AfterClass
+	@AfterAll
 	public static void tearDownAfterClass() throws Exception {
 	}
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 	}
 
-	@After
+	@AfterEach
 	public void tearDown() throws Exception {
 	}
 
