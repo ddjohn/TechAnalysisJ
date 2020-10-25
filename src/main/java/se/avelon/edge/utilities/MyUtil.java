@@ -26,15 +26,21 @@ public class MyUtil {
 	}
 	
 	public static CharSequence getURLContent(URL url) throws IOException {
+		log.info("url=" + url);
 		URLConnection conn = url.openConnection();
-		conn.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
-
-		String encoding = conn.getContentEncoding();
 		
+		conn.setConnectTimeout(2000);
+	    conn.setReadTimeout(2000);
+	    
+		conn.setRequestProperty("Accept-Language", "en-US,en;q=0.9");
+	    conn.setRequestProperty("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36");
+		String encoding = conn.getContentEncoding();
 		if (encoding == null) {
 			encoding = "ISO-8859-1";
 		}
+			
 		BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+
 		StringBuilder sb = new StringBuilder(16384);
 		try {
 			String line;
